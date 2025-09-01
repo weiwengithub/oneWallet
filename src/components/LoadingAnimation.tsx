@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function LoadingAnimation() {
   return (
@@ -49,7 +50,13 @@ export default function LoadingAnimation() {
           }}
         >
           <div className="w-8 h-8 rounded-lg flex items-center justify-center">
-            <img src="/apple-touch-icon.png" alt="" className="w-full h-full"/>
+            <Image
+              src="/apple-touch-icon.png"
+              alt="OneWallet Logo"
+              width={163}
+              height={166}
+              className="w-full h-full"
+            />
             {/*<span className="text-white font-bold text-sm">OW</span>*/}
           </div>
         </motion.div>

@@ -1,27 +1,11 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
-import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageWrapper from '@/components/PageWrapper';
 import { HelpCircle, MessageCircle, BookOpen } from 'lucide-react';
 import FAQItem from '@/components/FAQItem';
-
-export const metadata: Metadata = {
-  title: 'OneWallet Support - Help Center & FAQ',
-  description: 'Get help with OneWallet. Find answers to frequently asked questions about crypto wallet security, DeFi features, and blockchain support.',
-  keywords: 'OneWallet support, crypto wallet help, FAQ, blockchain support, DeFi help, wallet security',
-  openGraph: {
-    title: 'OneWallet Support - Help Center & FAQ',
-    description: 'Get help with OneWallet crypto wallet features and find answers to common questions.',
-    type: 'website',
-    locale: 'en_US',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'OneWallet Support - Help Center',
-    description: 'Find answers and get help with OneWallet crypto wallet.',
-  },
-};
 
 export default function SupportPage() {
   return (

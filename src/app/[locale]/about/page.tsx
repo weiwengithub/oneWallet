@@ -1,26 +1,10 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
-import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageWrapper from '@/components/PageWrapper';
 import { motion } from 'framer-motion';
-
-export const metadata: Metadata = {
-  title: 'About OneWallet - Building the Future of Digital Finance',
-  description: 'Learn about OneWallet\'s mission to democratize decentralized finance and make blockchain technology accessible to everyone, everywhere.',
-  keywords: 'OneWallet, about, blockchain, cryptocurrency, DeFi, digital wallet, team, mission, vision',
-  openGraph: {
-    title: 'About OneWallet - Building the Future of Digital Finance',
-    description: 'Learn about OneWallet\'s mission to democratize decentralized finance and make blockchain technology accessible to everyone, everywhere.',
-    type: 'website',
-    locale: 'en_US',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'About OneWallet - Building the Future of Digital Finance',
-    description: 'Learn about OneWallet\'s mission to democratize decentralized finance.',
-  },
-};
 
 export default function AboutPage() {
   return (

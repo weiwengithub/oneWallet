@@ -1,28 +1,12 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
-import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageWrapper from '@/components/PageWrapper';
 import { Button } from '@/components/ui/button';
 import { Mail, MessageSquare, Clock, Globe } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
-
-export const metadata: Metadata = {
-  title: 'Contact OneWallet - Get in Touch with Our Team',
-  description: 'Contact OneWallet support team. Get help with crypto wallet questions, technical support, or business inquiries. 24/7 customer service available.',
-  keywords: 'contact OneWallet, crypto wallet support, customer service, technical support, business inquiries',
-  openGraph: {
-    title: 'Contact OneWallet - Get in Touch with Our Team',
-    description: 'Contact OneWallet for support, questions, or business inquiries. 24/7 customer service.',
-    type: 'website',
-    locale: 'en_US',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Contact OneWallet',
-    description: 'Get in touch with OneWallet support team.',
-  },
-};
 
 export default function ContactPage() {
   return (

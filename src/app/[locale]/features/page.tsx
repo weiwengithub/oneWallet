@@ -1,26 +1,10 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
-import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageWrapper from '@/components/PageWrapper';
 import { Shield, Zap, Globe, Lock, Coins, Smartphone } from 'lucide-react';
-
-export const metadata: Metadata = {
-  title: 'OneWallet Features - Secure Crypto Wallet for DeFi & NFTs',
-  description: 'Discover OneWallet\'s advanced features: multi-layer security, DeFi support, cross-chain compatibility, and seamless crypto management.',
-  keywords: 'crypto wallet features, DeFi wallet, NFT wallet, blockchain security, cross-chain, cryptocurrency management',
-  openGraph: {
-    title: 'OneWallet Features - Secure Crypto Wallet for DeFi & NFTs',
-    description: 'Discover OneWallet\'s advanced features for secure crypto and DeFi management.',
-    type: 'website',
-    locale: 'en_US',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'OneWallet Features - Secure Crypto Wallet',
-    description: 'Advanced crypto wallet features for DeFi, NFTs, and blockchain management.',
-  },
-};
 
 export default function FeaturesPage() {
   return (
