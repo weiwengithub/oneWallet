@@ -2,17 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 以 1728 设计稿为基准：在 1728px 时 1rem = 16px */
-html {
-  /* 14px ≤ 1rem ≤ 16px；中间用 100vw/108 线性缩放（因为 1728/16=108） */
-  font-size: clamp(12px, calc(100vw / 108), 16px);
-}
-
-/* 可选：极宽屏时锁死 16px，避免过大 */
-@media (min-width: 1728px) {
-  html { font-size: 16px; }
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -81,7 +70,7 @@ html {
 
 /* Custom styles for OneWallet */
 .light {
-  --background: 7 7 7;
+  --background: 248 250 252;
   --foreground: 15 23 42;
   --card: 255 255 255;
   --card-foreground: 15 23 42;
@@ -100,17 +89,17 @@ html {
 
 .dark {
   --background: 15 23 42;
-  --foreground: 7 7 7;
+  --foreground: 248 250 252;
   --card: 30 41 59;
-  --card-foreground: 7 7 7;
+  --card-foreground: 248 250 252;
   --primary: 59 130 246;
   --primary-foreground: 255 255 255;
   --secondary: 51 65 85;
-  --secondary-foreground: 7 7 7;
+  --secondary-foreground: 248 250 252;
   --muted: 51 65 85;
   --muted-foreground: 148 163 184;
   --accent: 51 65 85;
-  --accent-foreground: 7 7 7;
+  --accent-foreground: 248 250 252;
   --border: 51 65 85;
   --input: 51 65 85;
   --ring: 59 130 246;

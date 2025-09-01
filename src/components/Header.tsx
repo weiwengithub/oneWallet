@@ -2,7 +2,6 @@
 
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
-import Image from 'next/image';
 import { Globe, Moon, Sun, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -40,12 +39,12 @@ export default function Header() {
 
   return (
     <motion.header
-      className="relative z-50 sm:px-[5rem] py-[5rem]"
+      className="relative z-50 px-4 sm:px-6 py-4"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="max-w-[1568px] mx-auto flex items-center justify-between">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <motion.div
           className="flex items-center space-x-2"
@@ -54,45 +53,95 @@ export default function Header() {
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           <Link href={`/${currentLocale}`} className="flex items-center space-x-2">
-            <div className="w-[10.5625rem] h-[2.625rem]">
-              <Image src="/images/logo-1.png" alt="" width={169} height={42} className="size-full" />
-            </div>
+            <motion.div
+              className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-blue-400 to-green-400 rounded-lg flex items-center justify-center shadow-lg"
+              whileHover={{
+                rotateY: 180,
+                boxShadow: "0 10px 25px rgba(59, 130, 246, 0.3)"
+              }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="text-white font-bold text-xs sm:text-sm">OW</span>
+            </motion.div>
+            <span className="text-white dark:text-white light:text-slate-800 font-semibold text-lg sm:text-xl transition-colors duration-300">
+              ONEWALLET
+            </span>
           </Link>
         </motion.div>
 
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center space-x-8">
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={`/${currentLocale}${item.href}`}
+              className="text-white dark:text-white light:text-slate-800 hover:text-blue-400 dark:hover:text-blue-400 light:hover:text-blue-600 transition-colors duration-300 text-sm font-medium"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+
         {/* Controls and Mobile Menu */}
-        <div className="flex items-center space-x-[12px]">
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          {/* Language Toggle */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-white dark:text-white light:text-slate-800 hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-slate-200/50 h-8 sm:h-9 px-2 sm:px-3 transition-all duration-300"
+                >
+                  <Globe className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden md:inline ml-1">{t('language')}</span>
+                </Button>
+              </motion.div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="end"
+              className="bg-white/90 dark:bg-slate-800/90 light:bg-white/95 backdrop-blur-md border-white/20 dark:border-slate-700/50 light:border-slate-200"
+            >
+              <DropdownMenuItem
+                onClick={() => handleLanguageChange('en')}
+                className="hover:bg-blue-500/10 cursor-pointer"
+              >
+                English
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => handleLanguageChange('zh')}
+                className="hover:bg-blue-500/10 cursor-pointer"
+              >
+                中文
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           {/* Theme Toggle */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="h-[2.625rem] w-[2.625rem] flex items-center justify-center text-white border-[1px] border-solid border-[rgba(255,255,255,0.2)] rounded-[40px] hover:bg-transparent hover:text-white"
               >
-                <div className="h-[1rem] w-[1rem]">
-                  <Sun className="size-full rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-white dark:text-white light:text-slate-800 hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-slate-200/50 h-8 sm:h-9 w-8 sm:w-9 p-0 transition-all duration-300"
+                >
+                  <motion.div
+                    animate={{ rotate: theme === 'dark' ? 0 : 180 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                    <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  </motion.div>
+                  <span className="sr-only">{t('theme')}</span>
+                </Button>
               </motion.div>
-              {/*<motion.div*/}
-              {/*  whileHover={{ scale: 1.05 }}*/}
-              {/*  whileTap={{ scale: 0.95 }}*/}
-              {/*>*/}
-              {/*  <Button*/}
-              {/*    variant="ghost"*/}
-              {/*    size="sm"*/}
-              {/*    className="text-white dark:text-white light:text-slate-800 hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-slate-200/50 h-8 sm:h-9 w-8 sm:w-9 p-0 transition-all duration-300"*/}
-              {/*  >*/}
-              {/*    <motion.div*/}
-              {/*      animate={{ rotate: theme === 'dark' ? 0 : 180 }}*/}
-              {/*      transition={{ duration: 0.3 }}*/}
-              {/*    >*/}
-              {/*      <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />*/}
-              {/*      <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />*/}
-              {/*    </motion.div>*/}
-              {/*    <span className="sr-only">{t('theme')}</span>*/}
-              {/*  </Button>*/}
-              {/*</motion.div>*/}
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="end"
@@ -115,48 +164,6 @@ export default function Header() {
                 className="hover:bg-blue-500/10 cursor-pointer"
               >
                 System
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          {/* Language Toggle */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="h-[2.625rem] flex items-center text-white border-[1px] border-solid border-[rgba(255,255,255,0.2)] rounded-[40px] px-[1rem] hover:bg-transparent hover:text-white"
-              >
-                <div className="h-[1rem] w-[1rem] mr-[1rem]">
-                  <Image src="/images/icon-language.png" alt="" width={16} height={16} className="size-full" />
-                </div>
-                <div className="h-[1.5rem] text-[1rem] leading-[1.5rem]">{t('language')}</div>
-                <div className="h-[0.25rem] w-[0.5rem] ml-[1rem]">
-                  <Image src="/images/icon-arrow.png" alt="" width={8} height={4} className="size-full" />
-                </div>
-              </motion.div>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent
-              align="end"
-              className="bg-white/90 dark:bg-slate-800/90 light:bg-white/95 backdrop-blur-md border-white/20 dark:border-slate-700/50 light:border-slate-200"
-            >
-              <DropdownMenuItem
-                onClick={() => handleLanguageChange('en')}
-                className="hover:bg-blue-500/10 cursor-pointer"
-              >
-                English
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onClick={() => handleLanguageChange('zh')}
-                className="hover:bg-blue-500/10 cursor-pointer"
-              >
-                简体中文
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onClick={() => handleLanguageChange('tw')}
-                className="hover:bg-blue-500/10 cursor-pointer"
-              >
-                繁體中文
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

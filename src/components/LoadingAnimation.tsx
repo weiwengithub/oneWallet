@@ -48,9 +48,8 @@ export default function LoadingAnimation() {
             ease: "easeInOut"
           }}
         >
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center">
-            <img src="/apple-touch-icon.png" alt="" className="w-full h-full"/>
-            {/*<span className="text-white font-bold text-sm">OW</span>*/}
+          <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-green-400 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-sm">OW</span>
           </div>
         </motion.div>
       </div>

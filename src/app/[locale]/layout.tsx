@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
-import { dmSans, notoSansSC, notoSansTC } from '../fonts';
+import { Inter } from "next/font/google";
 import "../globals.css";
 import Script from "next/script";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { ThemeProvider } from "next-themes";
 
-export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'zh' }, { locale: 'tw' }];
-}
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: 'swap',
+});
 
 export async function generateMetadata({
   params
 }: {
-  params: { locale: 'en' | 'zh' | 'tw' };
+  params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params;
+
   const isZh = locale === 'zh';
 
   return {
@@ -83,7 +86,6 @@ export async function generateMetadata({
       languages: {
         'en': 'https://onewallet.com/en',
         'zh': 'https://onewallet.com/zh',
-        'tw': 'https://onewallet.com/tw',
       },
     },
     verification: {
@@ -100,10 +102,10 @@ export default async function RootLayout({
   params
 }: {
   children: React.ReactNode;
-  params: { locale: 'en' | 'zh' | 'tw' };
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const messages = await getMessages({locale});
+  const messages = await getMessages();
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -132,15 +134,8 @@ export default async function RootLayout({
     }
   };
 
-  const fontClass =
-    locale === 'zh'
-      ? notoSansSC.variable // 简体中文
-      : locale === 'tw'
-        ? notoSansTC.variable // 繁体中文
-        : dmSans.variable;    // 英文等其它语言
-
   return (
-    <html lang={locale} className={fontClass} suppressHydrationWarning>
+    <html lang={locale} className={inter.variable} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
@@ -155,6 +150,11 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
+        <Script
+          crossOrigin="anonymous"
+          src="//unpkg.com/same-runtime/dist/index.global.js"
+        />
       </head>
       <body className="antialiased">
         <ThemeProvider
@@ -163,7 +163,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NextIntlClientProvider locale={locale} messages={messages}>
+          <NextIntlClientProvider messages={messages}>
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>

@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://onewallet.com'
-  const locales = ['en', 'zh', 'tw']
+  const locales = ['en', 'zh']
   const pages = ['', '/about', '/features', '/support', '/contact']
 
   const sitemap: MetadataRoute.Sitemap = []
@@ -17,7 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       languages: {
         en: `${baseUrl}/en`,
         zh: `${baseUrl}/zh`,
-        tw: `${baseUrl}/tw`,
       },
     },
   })
@@ -50,7 +49,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             en: `${baseUrl}/en${page}`,
             zh: `${baseUrl}/zh${page}`,
-            tw: `${baseUrl}/tw${page}`,
           },
         },
       })
