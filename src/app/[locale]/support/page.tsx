@@ -1,5 +1,13 @@
 import { useTranslations } from 'next-intl';
 import { Metadata } from 'next';
+
+// Generate static params for all supported locales
+export async function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'zh' }
+  ];
+}
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageWrapper from '@/components/PageWrapper';

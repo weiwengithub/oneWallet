@@ -1,10 +1,19 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+
+// Generate static params for all supported locales
+export async function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'zh' }
+  ];
+}
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageWrapper from '@/components/PageWrapper';
 import { Button } from '@/components/ui/button';
-import { Home, ArrowLeft } from 'lucide-react';
+import { Home } from 'lucide-react';
+import BackButton from '@/components/BackButton';
 
 export default function NotFound() {
   const t = useTranslations('common');
@@ -61,14 +70,7 @@ export default function NotFound() {
                 </Button>
               </Link>
 
-              <Button
-                variant="outline"
-                onClick={() => window.history.back()}
-                className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-black dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black light:border-slate-800 light:text-slate-800 light:hover:bg-slate-800 light:hover:text-white font-medium px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                <ArrowLeft className="w-5 h-5 mr-2" />
-                Go Back
-              </Button>
+              <BackButton />
             </div>
 
             {/* Helpful Links */}

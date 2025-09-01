@@ -10,56 +10,53 @@
   },
   "hero": {
     "title": "Your Gateway to Future Finance",
-    "description1": "Easy and secure to buy, store, send, and swap tokens — plus collect NFTs.",
-    "description2": "Trusted by 30M+ users across 200+ countries and regions.",
-    "getItOn": "GET IT ON",
+    "description": "Easy and safe to buy, store, send, swap tokens and collect NFTs. Trusted by 30+ millions users from 200+ countries and regions.",
     "downloadChrome": "Chrome Web Store",
     "downloadApp": "App Store"
   },
   "howItWorks": {
-    "title": "How it OneWallet",
-    "subtitle": "OneWallet: Seamless, Self-Custodial Web3 Access — Manage Assets, Interact with dApps, and Earn Rewards Securely in One Place.",
-    "works": "Works",
+    "title": "How it OneWallet Works",
+    "subtitle": "OneWallet is trusted by global users",
     "selfCustody": {
       "title": "Self-Custody",
-      "description": "You own your keys, you own your assets."
+      "description": "This is the fundamental shift from traditional finance."
     },
     "permissionless": {
       "title": "Permissionless",
-      "description": "Anyone, anywhere, can create a wallet and access DeFi & NFTs."
+      "description": "Anyone in the world can create a wallet and access decentralized networks and financial services (DeFi, NFTs)."
     },
     "interoperable": {
       "title": "Interoperable",
-      "description": "Your universal passport for the decentralized web."
+      "description": "Your wallet is a universal passport for the decentralized web."
     },
     "globalX": {
       "title": "Global X",
-      "description": "A borderless financial wallet built on next-gen blockchain infrastructure."
+      "description": "The wallet operates on a borderless financial infrastructure (blockchain)."
     }
   },
   "features": {
     "multiLayerSecurity": {
-      "title": "Multi-Layer Security",
-      "description": "Enterprise-grade protection to keep your assets safe."
+      "title": "Multi-layer security protections",
+      "description": "Advanced security measures to keep your assets safe"
     },
     "defiSupport": {
-      "title": "DeFi, DApp, GameFi & NFT Support",
-      "description": "One wallet for all your Web3 needs."
+      "title": "DeFi, DApp, GameFi and NFT supported",
+      "description": "Access the full ecosystem of decentralized applications"
     },
     "oneChainSupport": {
-      "title": "Supporting OneChain, SUI & Beyond",
-      "description": "Seamlessly connect with the fastest growing blockchain ecosystems."
+      "title": "Supporting OneChain, SUI and so on",
+      "description": "Compatible with multiple blockchain networks"
     }
   },
   "newsletter": {
     "title": "Subscribe to our Newsletter",
-    "description": "Stay ahead in the world of blockchain. Get product updates, insights, and Web3 trends directly to your inbox.",
-    "placeholder": "onewallet@gamil.com",
+    "description": "Your secure and trusted crypto wallet to explore blockchain",
+    "placeholder": "yourwallet@gmail.com",
     "subscribe": "Subscribe"
   },
   "footer": {
-    "description": "At OneWallet, we believe in open technology and empowering developers. Together, we’re building a safer, smarter, and richer blockchain world.",
-    "copyright": "OneWallet © 2025, All Rights Reserved"
+    "description": "We insist on open technology community and we welcome all developers to build a more convenient, secure and richer blockchain world together",
+    "copyright": "OneWallet © 2023. All rights reserved"
   },
   "about": {
     "title": "About OneWallet",

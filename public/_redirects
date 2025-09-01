@@ -1,0 +1,14 @@
+# Redirect root to English locale
+/  /en/  302
+
+# Redirect any missing pages to the appropriate locale
+/about  /en/about/  302
+/features  /en/features/  302
+/support  /en/support/  302
+/contact  /en/contact/  302
+
+# Handle static site routing
+/en  /en/index.html  200
+/zh  /zh/index.html  200
+/en/*  /en/:splat/index.html  200
+/zh/*  /zh/:splat/index.html  200
