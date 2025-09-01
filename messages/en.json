@@ -1,0 +1,118 @@
+{
+  "nav": {
+    "language": "Language",
+    "theme": "Theme",
+    "home": "Home",
+    "about": "About",
+    "features": "Features",
+    "support": "Support",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Your Gateway to Future Finance",
+    "description1": "Easy and secure to buy, store, send, and swap tokens — plus collect NFTs.",
+    "description2": "Trusted by 30M+ users across 200+ countries and regions.",
+    "getItOn": "GET IT ON",
+    "downloadChrome": "Chrome Web Store",
+    "downloadApp": "App Store"
+  },
+  "howItWorks": {
+    "title": "How it OneWallet",
+    "subtitle": "OneWallet: Seamless, Self-Custodial Web3 Access — Manage Assets, Interact with dApps, and Earn Rewards Securely in One Place.",
+    "works": "Works",
+    "selfCustody": {
+      "title": "Self-Custody",
+      "description": "You own your keys, you own your assets."
+    },
+    "permissionless": {
+      "title": "Permissionless",
+      "description": "Anyone, anywhere, can create a wallet and access DeFi & NFTs."
+    },
+    "interoperable": {
+      "title": "Interoperable",
+      "description": "Your universal passport for the decentralized web."
+    },
+    "globalX": {
+      "title": "Global X",
+      "description": "A borderless financial wallet built on next-gen blockchain infrastructure."
+    }
+  },
+  "features": {
+    "multiLayerSecurity": {
+      "title": "Multi-Layer Security",
+      "description": "Enterprise-grade protection to keep your assets safe."
+    },
+    "defiSupport": {
+      "title": "DeFi, DApp, GameFi & NFT Support",
+      "description": "One wallet for all your Web3 needs."
+    },
+    "oneChainSupport": {
+      "title": "Supporting OneChain, SUI & Beyond",
+      "description": "Seamlessly connect with the fastest growing blockchain ecosystems."
+    }
+  },
+  "newsletter": {
+    "title": "Subscribe to our Newsletter",
+    "description": "Stay ahead in the world of blockchain. Get product updates, insights, and Web3 trends directly to your inbox.",
+    "placeholder": "onewallet@gamil.com",
+    "subscribe": "Subscribe"
+  },
+  "footer": {
+    "description": "At OneWallet, we believe in open technology and empowering developers. Together, we’re building a safer, smarter, and richer blockchain world.",
+    "copyright": "OneWallet © 2025, All Rights Reserved"
+  },
+  "about": {
+    "title": "About OneWallet",
+    "subtitle": "Building the future of digital finance",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To democratize access to decentralized finance and make blockchain technology accessible to everyone, everywhere."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "A world where financial sovereignty is a universal right, powered by secure, user-friendly blockchain technology."
+    },
+    "team": {
+      "title": "Our Team",
+      "description": "A diverse group of blockchain experts, security specialists, and UX designers working towards a decentralized future."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "info": {
+      "title": "Get in Touch",
+      "description": "Have questions about OneWallet? We're here to help."
+    }
+  },
+  "support": {
+    "title": "Support Center",
+    "subtitle": "Find answers to your questions",
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": [
+        {
+          "question": "How do I create a wallet?",
+          "answer": "Download OneWallet from the Chrome Web Store or App Store, then follow the setup wizard to create your new wallet securely."
+        },
+        {
+          "question": "Is OneWallet secure?",
+          "answer": "Yes, OneWallet uses multi-layer security including encryption, secure key storage, and advanced authentication to protect your assets."
+        },
+        {
+          "question": "Which blockchains are supported?",
+          "answer": "OneWallet supports multiple blockchains including OneChain, Ethereum, SUI, and many others in the ecosystem."
+        }
+      ]
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "notFound": "Page not found",
+    "backHome": "Back to Home"
+  }
+}
