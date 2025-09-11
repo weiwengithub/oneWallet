@@ -1,9 +1,14 @@
 const withNextIntl = require('next-intl/plugin')('./src/i18n.ts');
 
+const isProd = process.env.NODE_ENV === 'production';
+const BASE = isProd ? '' : '';  // 例如 '/onewallet-website'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  basePath: BASE,
+  assetPrefix: BASE + '/',
   allowedDevOrigins: ["*.preview.same-app.com"],
   experimental: {
     optimizePackageImports: ['framer-motion', 'lucide-react'],

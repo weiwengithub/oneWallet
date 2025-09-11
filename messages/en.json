@@ -10,14 +10,13 @@
   },
   "hero": {
     "title": "Your Gateway to Future Finance",
-    "description1": "Easy and secure to buy, store, send, and swap tokens — plus collect NFTs.",
-    "description2": "Trusted by 30M+ users across 200+ countries and regions.",
+    "description": "Easy and secure to buy, store, send, and swap tokens — plus collect NFTs.",
     "getItOn": "GET IT ON",
     "downloadChrome": "Chrome Web Store",
     "downloadApp": "App Store"
   },
   "howItWorks": {
-    "title": "How it OneWallet",
+    "title": "How OneWallet",
     "subtitle": "OneWallet: Seamless, Self-Custodial Web3 Access — Manage Assets, Interact with dApps, and Earn Rewards Securely in One Place.",
     "works": "Works",
     "selfCustody": {
@@ -25,11 +24,11 @@
       "description": "You own your keys, you own your assets."
     },
     "permissionless": {
-      "title": "Permissionless",
+      "title": "Permissionless Access",
       "description": "Anyone, anywhere, can create a wallet and access DeFi & NFTs."
     },
     "interoperable": {
-      "title": "Interoperable",
+      "title": "Interoperability",
       "description": "Your universal passport for the decentralized web."
     },
     "globalX": {
@@ -52,14 +51,18 @@
     }
   },
   "newsletter": {
-    "title": "Subscribe to our Newsletter",
+    "title": "Subscribe to Our Newsletter",
     "description": "Stay ahead in the world of blockchain. Get product updates, insights, and Web3 trends directly to your inbox.",
-    "placeholder": "onewallet@gamil.com",
-    "subscribe": "Subscribe"
+    "placeholder": "onewallet@gmail.com",
+    "subscribe": "Subscribe",
+    "emailError": "Please enter a valid email",
+    "subscriptionSuccessful": "Subscription Successful"
   },
   "footer": {
     "description": "At OneWallet, we believe in open technology and empowering developers. Together, we’re building a safer, smarter, and richer blockchain world.",
-    "copyright": "OneWallet © 2025, All Rights Reserved"
+    "copyright": "© OneWallet 2025. All Rights Reserved.",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy"
   },
   "about": {
     "title": "About OneWallet",

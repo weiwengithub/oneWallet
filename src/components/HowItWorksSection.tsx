@@ -30,7 +30,7 @@ export default function HowItWorksSection() {
       key: 'selfCustody',
       icon: (
         <motion.div
-          className="w-[12.25rem] h-[12.1875rem] mx-auto"
+          className="w-24 h-24 sm:w-[12.25rem] sm:h-[12.1875rem] mx-auto"
           whileHover={{
             scale: 1.1,
             rotateY: 15
@@ -50,7 +50,7 @@ export default function HowItWorksSection() {
       key: 'permissionless',
       icon: (
         <motion.div
-          className="w-[12.25rem] h-[12.1875rem] mx-auto"
+          className="w-24 h-24 sm:w-[12.25rem] sm:h-[12.1875rem] mx-auto"
           whileHover={{
             scale: 1.1,
             rotateY: 15
@@ -70,7 +70,7 @@ export default function HowItWorksSection() {
       key: 'interoperable',
       icon: (
         <motion.div
-          className="w-[14.125rem] h-[12.1875rem] mx-auto"
+          className="w-28 h-24 sm:w-[14.125rem] sm:h-[12.1875rem] mx-auto"
           whileHover={{
             scale: 1.1,
             rotateY: 15
@@ -90,7 +90,7 @@ export default function HowItWorksSection() {
       key: 'globalX',
       icon: (
         <motion.div
-          className="w-[12.25rem] h-[12.1875rem] mx-auto"
+          className="w-24 h-24 sm:w-[12.25rem] sm:h-[12.1875rem] mx-auto"
           whileHover={{
             scale: 1.1,
             rotateY: 15
@@ -106,28 +106,28 @@ export default function HowItWorksSection() {
   return (
     <motion.section
       ref={ref}
-      className="relative px-[5rem] py-[5rem]"
+      className="relative px-4 py-16 sm:px-[5rem] sm:py-[5rem]"
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
     >
       <div className="max-w-[1568px] mx-auto text-center">
         <motion.h2
-          className="text-[3.25rem] font-bold mb-[1rem] text-white leading-[3.5rem] tracking-wide transition-colors duration-300"
+          className="text-3xl sm:text-[3.25rem] font-bold mb-4 sm:mb-[1rem] text-white leading-tight sm:leading-[3.5rem] tracking-wide transition-colors duration-300"
           variants={itemVariants}
         >
           {t('title')} <span className="text-[#0047C4] dark:text-[#0047C4] light:text-blue-600">{t('works')}</span>
         </motion.h2>
 
         <motion.p
-          className="text-[1.5rem] font-medium text-white leading-[2.25rem] opacity-80"
+          className="text-lg sm:text-[1.5rem] font-medium text-white leading-relaxed sm:leading-[2.25rem] opacity-80"
           variants={itemVariants}
         >
           {t('subtitle')}
         </motion.p>
 
         <motion.div
-          className="mt-[6.5rem] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[3.75rem]"
+          className="mt-12 sm:mt-[6.5rem] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-[3.75rem]"
           variants={containerVariants}
         >
           {features.map((feature, index) => (
@@ -139,21 +139,21 @@ export default function HowItWorksSection() {
               transition={{ duration: 0.3 }}
             >
               {/* Icon */}
-              <div className="mb-[2.75rem] relative w-full h-[12.1875rem]">
+              <div className="mb-6 sm:mb-[2.75rem] relative w-full h-32 sm:h-[12.1875rem]">
                 {feature.icon}
                 {feature.arrow}
               </div>
 
               {/* Content */}
               <motion.h3
-                className="text-[1.875rem] font-bold mb-[0.875rem] text-white dark:text-white light:text-slate-800 group-hover:text-[#0047C4] dark:group-hover:text-[#0047C4] light:group-hover:text-blue-600 transition-colors duration-300"
+                className="text-xl sm:text-[1.875rem] font-bold mb-3 sm:mb-[0.875rem] text-white dark:text-white light:text-slate-800 group-hover:text-[#0047C4] dark:group-hover:text-[#0047C4] light:group-hover:text-blue-600 transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
               >
                 {t(`${feature.key}.title`)}
               </motion.h3>
 
               <motion.p
-                className="text-white dark:text-white light:text-slate-600 text-[1.125rem] leading-[1.5rem] opacity-80 max-w-xs transition-colors duration-300"
+                className="text-white dark:text-white light:text-slate-600 text-sm sm:text-[1.125rem] leading-relaxed sm:leading-[1.5rem] opacity-80 max-w-xs transition-colors duration-300"
                 initial={{ opacity: 0.8 }}
                 whileHover={{ opacity: 1 }}
               >

@@ -3,112 +3,118 @@
     "language": "語言",
     "theme": "主題",
     "home": "首頁",
-    "about": "關於我們",
-    "features": "產品功能",
-    "support": "幫助支持",
-    "contact": "聯係我們"
+    "about": "關於",
+    "features": "功能",
+    "support": "支援",
+    "contact": "聯絡"
   },
   "hero": {
-    "title": "您通往未來金融的門戶",
-    "description": "安全便捷地購買、存儲、發送、交換代幣和收集NFT。受到來自200多個國家和地區的3000多萬用戶信賴。",
-    "downloadChrome": "Chrome Web Store",
+    "title": "通往未來金融的大門",
+    "description": "輕鬆安全地購買、儲存、發送和兌換代幣，並收集 NFT。",
+    "getItOn": "取得",
+    "downloadChrome": "Chrome 網上應用店",
     "downloadApp": "App Store"
   },
   "howItWorks": {
-    "title": "OneWallet 如何工作",
-    "subtitle": "OneWallet 受到全球用戶信賴",
+    "title": "OneWallet 如何運作",
+    "subtitle": "OneWallet：無縫的自託管 Web3 存取——在一個地方安全管理資產、與 dApp 互動並賺取獎勵。",
+    "works": "運作方式",
     "selfCustody": {
-      "title": "子托管",
-      "description": "這是傳統金融的根本性轉變。"
+      "title": "自我託管",
+      "description": "你擁有你的密鑰，你就擁有你的資產。"
     },
     "permissionless": {
-      "title": "無需許可",
-      "description": "世界上任何人都可以創建錢包並訪問去中心化網絡和金融服務（DeFi、NFT）。"
+      "title": "無許可存取",
+      "description": "任何人、任何地方都可以創建錢包並存取 DeFi 和 NFT。"
     },
     "interoperable": {
       "title": "互操作性",
-      "description": "您的錢包是去中心化網絡的通用護照。"
+      "description": "你通往去中心化網路的通行證。"
     },
     "globalX": {
-      "title": "全球化",
-      "description": "錢包在無邊界的金融基礎設施（區塊鏈）上運行。"
+      "title": "全球 X",
+      "description": "基於下一代區塊鏈基礎設施構建的無國界金融錢包。"
     }
   },
   "features": {
     "multiLayerSecurity": {
       "title": "多層安全保護",
-      "description": "先進的安全措施保護您的資產安全"
+      "description": "企業級防護，保障你的資產安全。"
     },
     "defiSupport": {
-      "title": "支持 DeFi、DApp、GameFi 和 NFT",
-      "description": "訪問完整的去中心化應用生態系統"
+      "title": "支援 DeFi、DApp、GameFi 和 NFT",
+      "description": "一個錢包滿足你所有的 Web3 需求。"
     },
     "oneChainSupport": {
-      "title": "支持 OneChain、SUI 等",
-      "description": "兼容多個區塊鏈網絡"
+      "title": "支援 OneChain、SUI 及更多",
+      "description": "無縫連接到增長最快的區塊鏈生態系統。"
     }
   },
   "newsletter": {
-    "title": "訂閲我們的新聞通訊",
-    "description": "您安全可信的加密錢包，探索區塊鏈世界",
-    "placeholder": "yourwallet@gmail.com",
-    "subscribe": "訂閲"
+    "title": "訂閱我們的新聞通訊",
+    "description": "走在區塊鏈世界的前沿，直接在你的信箱中獲取產品更新、見解和 Web3 趨勢。",
+    "placeholder": "onewallet@gmail.com",
+    "subscribe": "訂閱",
+    "emailError": "請輸入有效的電子郵件地址",
+    "subscriptionSuccessful": "訂閱成功"
   },
   "footer": {
-    "description": "我們堅持開放的技術社區，歡迎所有開發者共同構建更便捷、安全、豐富的區塊鏈世界",
-    "copyright": "OneWallet © 2023. 保留所有權利"
+    "description": "在 OneWallet，我們相信開放技術和賦能開發者。我們共同構建一個更安全、更智慧、更富有的區塊鏈世界。",
+    "copyright": "© OneWallet 2025. 版權所有。",
+    "termsOfService": "服務條款",
+    "privacyPolicy": "隱私權政策"
   },
   "about": {
     "title": "關於 OneWallet",
-    "subtitle": "構建數字金融的未來",
+    "subtitle": "構建數位金融的未來",
     "mission": {
       "title": "我們的使命",
-      "description": "讓去中心化金融民主化，讓區塊鏈技術在世界各地為每個人所用。"
+      "description": "普惠去中心化金融的存取權，讓區塊鏈技術對所有人、任何地方都觸手可及。"
     },
     "vision": {
       "title": "我們的願景",
-      "description": "一個金融主權是普遍權利的世界，由安全、用戶友好的區塊鏈技術提供支持。"
+      "description": "一個人人享有金融主權的世界，由安全、易用的區塊鏈技術驅動。"
     },
     "team": {
       "title": "我們的團隊",
-      "description": "一個由區塊鏈專家、安全專家和用戶體驗設計師組成的多元化團隊，致力於去中心化的未來。"
+      "description": "由區塊鏈專家、安全專家和使用者體驗設計師組成的多元團隊，共同致力於去中心化的未來。"
     }
   },
   "contact": {
-    "title": "聯係我們",
-    "subtitle": "與我們的團隊取得聯係",
+    "title": "聯絡我們",
+    "subtitle": "與我們的團隊取得聯繫",
     "email": "電子郵件",
-    "message": "消息",
-    "send": "發送消息",
+    "message": "留言",
+    "send": "發送訊息",
     "info": {
-      "title": "聯係方式",
-      "description": "對 OneWallet 有疑問？我們隨時為您提供幫助。"
+      "title": "取得聯繫",
+      "description": "對 OneWallet 有疑問？我們隨時為你解答。"
     }
   },
   "support": {
-    "title": "幫助中心",
-    "subtitle": "找到您問題的答案",
+    "title": "支援中心",
+    "subtitle": "找到你的問題答案",
     "faq": {
       "title": "常見問題",
       "questions": [
         {
           "question": "如何創建錢包？",
-          "answer": "從 Chrome Web Store 或 App Store 下載 OneWallet，然後按照設置向導安全地創建您的新錢包。"
+          "answer": "從 Chrome 網上應用店或 App Store 下載 OneWallet，然後按照安裝精靈安全創建新錢包。"
         },
         {
           "question": "OneWallet 安全嗎？",
-          "answer": "是的，OneWallet 使用多層安全保護，包括加密、安全密鑰存儲和高級身份驗證來保護您的資產。"
+          "answer": "是的，OneWallet 採用多層安全防護，包括加密、安全金鑰儲存和高級身份驗證來保護你的資產。"
         },
         {
-          "question": "支持哪些區塊鏈？",
-          "answer": "OneWallet 支持多個區塊鏈，包括 OneChain、以太坊、SUI 和生態系統中的許多其他區塊鏈。"
+          "question": "支援哪些區塊鏈？",
+          "answer": "OneWallet 支援包括 OneChain、以太坊、SUI 在內的多個區塊鏈以及更多生態系統。"
         }
       ]
     }
   },
   "common": {
-    "loading": "加載中...",
-    "error": "出現了一些問題",
+    "loading": "載入中...",
+    "error": "發生錯誤",
     "notFound": "頁面未找到",
     "backHome": "返回首頁"
   }

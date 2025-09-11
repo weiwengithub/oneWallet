@@ -38,9 +38,11 @@ export default function Header() {
 
   const currentLocale = pathname.split('/')[1] || 'en';
 
+  const [showTheme] = useState(false);
+
   return (
     <motion.header
-      className="relative z-50 sm:px-[5rem] py-[5rem]"
+      className="relative z-50 px-4 py-6 sm:px-[5rem] sm:pt-[1.5rem] sm:pb-[5.875rem]"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -54,8 +56,8 @@ export default function Header() {
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           <Link href={`/${currentLocale}`} className="flex items-center space-x-2">
-            <div className="w-[10.5625rem] h-[2.625rem]">
-              <Image src="/images/logo-1.png" alt="" width={169} height={42} className="size-full" />
+            <div className="w-[21.125rem] h-[5.25rem]">
+              <Image src="/images/logo.png" alt="" width={338} height={84} className="size-full" />
             </div>
           </Link>
         </motion.div>
@@ -63,61 +65,44 @@ export default function Header() {
         {/* Controls and Mobile Menu */}
         <div className="flex items-center space-x-[12px]">
           {/* Theme Toggle */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="h-[2.625rem] w-[2.625rem] flex items-center justify-center text-white border-[1px] border-solid border-[rgba(255,255,255,0.2)] rounded-[40px] hover:bg-transparent hover:text-white"
+          {showTheme && (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="h-[2.625rem] w-[2.625rem] flex items-center justify-center text-white border-[1px] border-solid border-[rgba(255,255,255,0.2)] rounded-[40px] hover:bg-transparent hover:text-white cursor-pointer"
+                >
+                  <div className="h-[1rem] w-[1rem]">
+                    <Sun className="size-full rotate-0 scale-100 transition-all" />
+                  </div>
+                </motion.div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align="end"
+                className="bg-white/90 dark:bg-slate-800/90 light:bg-white/95 backdrop-blur-md border-white/20 dark:border-slate-700/50 light:border-slate-200"
               >
-                <div className="h-[1rem] w-[1rem]">
-                  <Sun className="size-full rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                </div>
-              </motion.div>
-              {/*<motion.div*/}
-              {/*  whileHover={{ scale: 1.05 }}*/}
-              {/*  whileTap={{ scale: 0.95 }}*/}
-              {/*>*/}
-              {/*  <Button*/}
-              {/*    variant="ghost"*/}
-              {/*    size="sm"*/}
-              {/*    className="text-white dark:text-white light:text-slate-800 hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-slate-200/50 h-8 sm:h-9 w-8 sm:w-9 p-0 transition-all duration-300"*/}
-              {/*  >*/}
-              {/*    <motion.div*/}
-              {/*      animate={{ rotate: theme === 'dark' ? 0 : 180 }}*/}
-              {/*      transition={{ duration: 0.3 }}*/}
-              {/*    >*/}
-              {/*      <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />*/}
-              {/*      <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />*/}
-              {/*    </motion.div>*/}
-              {/*    <span className="sr-only">{t('theme')}</span>*/}
-              {/*  </Button>*/}
-              {/*</motion.div>*/}
-            </DropdownMenuTrigger>
-            <DropdownMenuContent
-              align="end"
-              className="bg-white/90 dark:bg-slate-800/90 light:bg-white/95 backdrop-blur-md border-white/20 dark:border-slate-700/50 light:border-slate-200"
-            >
-              <DropdownMenuItem
-                onClick={() => setTheme('light')}
-                className="hover:bg-blue-500/10 cursor-pointer"
-              >
-                Light
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onClick={() => setTheme('dark')}
-                className="hover:bg-blue-500/10 cursor-pointer"
-              >
-                Dark
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                onClick={() => setTheme('system')}
-                className="hover:bg-blue-500/10 cursor-pointer"
-              >
-                System
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+                <DropdownMenuItem
+                  onClick={() => setTheme('light')}
+                  className="hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer"
+                >
+                  Light
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => setTheme('dark')}
+                  className="hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer"
+                >
+                  Dark
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => setTheme('system')}
+                  className="hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer"
+                >
+                  System
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
 
           {/* Language Toggle */}
           <DropdownMenu>
@@ -125,7 +110,7 @@ export default function Header() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="h-[2.625rem] flex items-center text-white border-[1px] border-solid border-[rgba(255,255,255,0.2)] rounded-[40px] px-[1rem] hover:bg-transparent hover:text-white"
+                className="h-[2.625rem] flex items-center text-white border-[1px] border-solid border-[rgba(255,255,255,0.2)] rounded-[40px] px-[1rem] hover:bg-transparent hover:text-white cursor-pointer"
               >
                 <div className="h-[1rem] w-[1rem] mr-[1rem]">
                   <Image src="/images/icon-language.png" alt="" width={16} height={16} className="size-full" />
@@ -142,19 +127,19 @@ export default function Header() {
             >
               <DropdownMenuItem
                 onClick={() => handleLanguageChange('en')}
-                className="hover:bg-blue-500/10 cursor-pointer"
+                className="hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer"
               >
                 English
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() => handleLanguageChange('zh')}
-                className="hover:bg-blue-500/10 cursor-pointer"
+                className="hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer"
               >
                 简体中文
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() => handleLanguageChange('tw')}
-                className="hover:bg-blue-500/10 cursor-pointer"
+                className="hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer"
               >
                 繁體中文
               </DropdownMenuItem>
@@ -162,13 +147,13 @@ export default function Header() {
           </DropdownMenu>
 
           {/* Mobile Menu Toggle */}
-          <motion.button
-            className="lg:hidden text-white dark:text-white light:text-slate-800 hover:text-blue-400 p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            whileTap={{ scale: 0.95 }}
-          >
-            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </motion.button>
+          {/*<motion.button*/}
+          {/*  className="lg:hidden text-white dark:text-white light:text-slate-800 hover:text-blue-400 p-2"*/}
+          {/*  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}*/}
+          {/*  whileTap={{ scale: 0.95 }}*/}
+          {/*>*/}
+          {/*  {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}*/}
+          {/*</motion.button>*/}
         </div>
       </div>
 

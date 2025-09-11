@@ -31,7 +31,7 @@ export default function FeaturesSection() {
     {
       key: 'multiLayerSecurity',
       icon: (
-        <div className="relative w-[25rem] h-[25rem] mx-auto mb-[1.25rem]">
+        <div className="relative w-48 h-48 sm:w-[25rem] sm:h-[25rem] mx-auto mb-4 sm:mb-[1.25rem]">
           <motion.div
             className="absolute inset-0 bg-[#001027] rounded-[1.5rem] transform rotate-3"
             animate={{ rotateY: [0, 5, 0, -5, 0] }}
@@ -54,7 +54,7 @@ export default function FeaturesSection() {
     {
       key: 'defiSupport',
       icon: (
-        <div className="relative w-[25rem] h-[25rem] mx-auto mb-[1.25rem]">
+        <div className="relative w-48 h-48 sm:w-[25rem] sm:h-[25rem] mx-auto mb-4 sm:mb-[1.25rem]">
           <motion.div
             className="absolute inset-0 bg-[#001027] rounded-[1.5rem] transform -rotate-2"
             animate={{ rotateY: [0, -5, 0, 5, 0] }}
@@ -76,7 +76,7 @@ export default function FeaturesSection() {
     {
       key: 'oneChainSupport',
       icon: (
-        <div className="relative w-[25rem] h-[25rem] mx-auto mb-[1.25rem]">
+        <div className="relative w-48 h-48 sm:w-[25rem] sm:h-[25rem] mx-auto mb-4 sm:mb-[1.25rem]">
           <motion.div
             className="absolute inset-0 bg-[#001027] rounded-[1.5rem] transform rotate-1"
             animate={{ rotateY: [0, 3, 0, -3, 0] }}
@@ -100,14 +100,14 @@ export default function FeaturesSection() {
   return (
     <motion.section
       ref={ref}
-      className="relative px-[5rem]"
+      className="relative px-4 sm:px-[5rem]"
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
     >
       <div className="max-w-[1568px] mx-auto">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2.125rem]"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-[2.125rem]"
           variants={containerVariants}
         >
           {features.map((feature) => (
@@ -118,7 +118,7 @@ export default function FeaturesSection() {
               transition={{ duration: 0.3 }}
             >
               <Card
-                className="h-[42.5rem] bg-[#011B40] border-none rounded-[1.5rem] p-[3.125rem]"
+                className="h-auto sm:h-[42.5rem] bg-[#011B40] border-none rounded-[1.5rem] p-6 sm:p-[3.125rem]"
               >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -128,14 +128,14 @@ export default function FeaturesSection() {
                 </motion.div>
 
                 <motion.h3
-                  className="text-white text-[1.625rem] font-bold leading-[2.25rem] text-center transition-colors duration-300"
+                  className="text-white text-lg sm:text-[1.625rem] font-bold leading-tight sm:leading-[2.25rem] text-center transition-colors duration-300"
                   whileHover={{ scale: 1.02 }}
                 >
                   {t(`${feature.key}.title`)}
                 </motion.h3>
 
                 <motion.p
-                  className="mt-[1.25rem] text-white text-[1.25rem] leading-[2.25rem] text-center transition-colors duration-300"
+                  className="mt-4 sm:mt-[1.25rem] text-white text-sm sm:text-[1.25rem] leading-relaxed sm:leading-[2.25rem] text-center transition-colors duration-300"
                   initial={{ opacity: 0.8 }}
                   whileHover={{ opacity: 1 }}
                 >

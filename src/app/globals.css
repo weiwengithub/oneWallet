@@ -74,6 +74,12 @@ html {
   * {
     @apply border-border;
   }
+  html, body {
+    @apply overscroll-none bg-black text-white;
+    /* 下面两条不是 Tailwind 原生属性，用普通 CSS 写 */
+    -webkit-overflow-scrolling: auto; /* 关惯性滚动，减少底色露出 */
+    background-color: #070707;           /* 与站点背景一致，兜底 */
+  }
   body {
     @apply bg-background text-foreground;
   }
@@ -134,3 +140,21 @@ html {
 .animate-float-delayed {
   animation: float-delayed 3s ease-in-out infinite 1.5s;
 }
+
+/* 进入/退出动画 */
+@keyframes toastIn {
+    from { transform: translateX(calc(100% + 16px)); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes toastOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+@keyframes toastSwipeOut {
+    from { transform: translateX(var(--radix-toast-swipe-end-x, 0)); }
+    to   { transform: translateX(calc(100% + 16px)); }
+}
+
+.animate-in { animation: toastIn 180ms ease-out; }
+.animate-out { animation: toastOut 120ms ease-in forwards; }
+.animate-swipeOut { animation: toastSwipeOut 160ms ease-out forwards; }

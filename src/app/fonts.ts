@@ -1,31 +1,25 @@
-import localFont from 'next/font/local';
+import { DM_Sans, Noto_Sans_SC, Noto_Sans_TC } from 'next/font/google';
 
-export const dmSans = localFont({
-  src: [
-    { path: '../assets/fonts/dm-sans/DMSans-Regular.ttf', weight: '400', style: 'normal' },
-    { path: '../assets/fonts/dm-sans/DMSans-Medium.ttf', weight: '500', style: 'normal' },
-    { path: '../assets/fonts/dm-sans/DMSans-Bold.ttf', weight: '700', style: 'normal' },
-  ],
+// DM Sans
+export const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
   variable: '--font-dm-sans',
   display: 'swap',
 });
 
-export const notoSansSC = localFont({
-  src: [
-    { path: '../assets/fonts/noto-sans-sc/NotoSansSC-Regular.ttf', weight: '400', style: 'normal' },
-    { path: '../assets/fonts/noto-sans-sc/NotoSansSC-Medium.ttf', weight: '500', style: 'normal' },
-    { path: '../assets/fonts/noto-sans-sc/NotoSansSC-Bold.ttf', weight: '700', style: 'normal' },
-  ],
+// Noto Sans Simplified Chinese
+export const notoSansSC = Noto_Sans_SC({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
   variable: '--font-noto-sans-sc',
   display: 'swap',
 });
 
-export const notoSansTC = localFont({
-  src: [
-    { path: '../assets/fonts/noto-sans-tc/NotoSansTC-Regular.ttf', weight: '400', style: 'normal' },
-    { path: '../assets/fonts/noto-sans-tc/NotoSansTC-Medium.ttf', weight: '500', style: 'normal' },
-    { path: '../assets/fonts/noto-sans-tc/NotoSansTC-Bold.ttf', weight: '700', style: 'normal' },
-  ],
+// Noto Sans Traditional Chinese
+export const notoSansTC = Noto_Sans_TC({
+  subsets: ['latin'], // 同上
+  weight: ['400', '500', '700'],
   variable: '--font-noto-sans-tc',
   display: 'swap',
 });

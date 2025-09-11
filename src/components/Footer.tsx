@@ -28,7 +28,7 @@ export default function Footer() {
   return (
     <motion.footer
       ref={ref}
-      className="relative pt-[9.25rem] pb-[2.75rem]"
+      className="relative pt-16 pb-8 sm:pt-[9.25rem] sm:pb-[2.75rem] px-4"
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
@@ -40,15 +40,15 @@ export default function Footer() {
         >
           {/* Logo */}
           <motion.div
-            className="flex h-[4rem] items-center justify-center space-x-2"
+            className="flex h-12 sm:h-[4rem] items-center justify-center space-x-2"
             variants={itemVariants}
           >
-            <Image src="/images/logo-1.png" alt="" width={254} height={63} className="w-auto h-full" />
+            <Image src="/images/logo.png" alt="" width={254} height={63} className="w-auto h-full" />
           </motion.div>
 
           {/* Description */}
           <motion.p
-            className="mt-[1.5rem] text-[1.125rem] font-medium text-white leading-[1.75rem] transition-colors duration-300"
+            className="mt-4 sm:mt-[1.5rem] text-sm sm:text-[1.125rem] font-medium text-white leading-relaxed sm:leading-[1.75rem] transition-colors duration-300"
             variants={itemVariants}
           >
             {t('description')}
@@ -56,16 +56,49 @@ export default function Footer() {
 
           {/* Copyright */}
           <motion.div
-            className="pt-[1.75rem]"
+            className="pt-4 sm:pt-[1.75rem]"
             variants={itemVariants}
           >
             <motion.p
-              className="text-[1.125rem] font-medium text-white leading-[1.75rem] transition-colors duration-300"
+              className="text-sm sm:text-[1.125rem] font-medium text-white leading-relaxed sm:leading-[1.75rem] transition-colors duration-300"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
               {t('copyright')}
             </motion.p>
+          </motion.div>
+
+          {/* Agreement */}
+          <motion.div
+            className="pt-4 sm:pt-[1.75rem]"
+            variants={itemVariants}
+          >
+            <motion.span
+              className="inline-block text-sm sm:text-[1.125rem] font-medium text-[#A0A1A1] hover:text-[#0047C4] leading-relaxed sm:leading-[1.75rem] cursor-pointer transition-colors duration-300"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => {
+                window.open(
+                  'https://onewallet2020.s3.ap-southeast-2.amazonaws.com/aggrement/index.html#/terms',
+                  '_blank'
+                );
+              }}
+            >
+              {t('termsOfService')}
+            </motion.span>
+            <motion.span
+              className="ml-[36px] inline-block text-sm sm:text-[1.125rem] font-medium text-[#A0A1A1] hover:text-[#0047C4] leading-relaxed sm:leading-[1.75rem] cursor-pointer transition-colors duration-300"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => {
+                window.open(
+                  'https://onewallet2020.s3.ap-southeast-2.amazonaws.com/aggrement/index.html#/privacy',
+                  '_blank'
+                );
+              }}
+            >
+              {t('privacyPolicy')}
+            </motion.span>
           </motion.div>
         </motion.div>
       </div>

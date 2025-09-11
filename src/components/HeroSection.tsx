@@ -35,7 +35,7 @@ export default function HeroSection() {
   return (
     <motion.section
       ref={ref}
-      className="relative sm:px-[80px]"
+      className="relative px-4 sm:px-[80px]"
       style={{ y, opacity }}
       initial="hidden"
       animate="visible"
@@ -49,27 +49,21 @@ export default function HeroSection() {
             variants={itemVariants}
           >
             <motion.h1
-              className="mt-[1.75rem] h-[12.375rem] text-[5.875rem] font-extrabold leading-[5.375rem] text-white dark:text-white light:text-slate-800 transition-colors duration-300"
+              className="mt-4 sm:mt-[1.75rem] text-4xl sm:text-[5.875rem] font-extrabold leading-tight sm:leading-[5.375rem] text-white dark:text-white light:text-slate-800 transition-colors duration-300"
               variants={itemVariants}
             >
               {t('title')}
             </motion.h1>
 
             <motion.p
-              className="mt-[2.25rem] text-[1.5rem] text-white leading-[2.25rem] opacity-80 transition-colors duration-300"
+              className="mt-6 sm:mt-[2.25rem] text-lg sm:text-[1.5rem] text-white leading-relaxed sm:leading-[2.25rem] opacity-80 transition-colors duration-300"
               variants={itemVariants}
             >
-              {t('description1')}
-            </motion.p>
-            <motion.p
-              className="text-[1.5rem] text-white leading-[2.25rem] opacity-80 transition-colors duration-300"
-              variants={itemVariants}
-            >
-              {t('description2')}
+              {t('description')}
             </motion.p>
 
             <motion.div
-              className="mt-[3.125rem] flex flex-col sm:flex-row gap-[40px] mx-auto lg:mx-0"
+              className="mt-8 sm:mt-[3.125rem] flex flex-col sm:flex-row gap-4 sm:gap-[40px] mx-auto lg:mx-0"
               variants={itemVariants}
             >
               <motion.div
@@ -79,7 +73,13 @@ export default function HeroSection() {
               >
                 <Button
                   size="lg"
-                  className="w-[18.75rem] h-[5rem] flex items-center justify-center bg-white rounded-[13px] hover:bg-white transition-all duration-300"
+                  className="w-full sm:w-[19.75rem] h-16 sm:h-[5rem] flex items-center justify-center bg-white rounded-[13px] hover:bg-white transition-all duration-300"
+                  onClick={() => {
+                    window.open(
+                      'https://chromewebstore.google.com/detail/onewallet/gclmcgmpkgblaglfokkaclneihpnbkli',
+                      '_blank'
+                    );
+                  }}
                 >
                   <div className="w-[3.125rem] h-[3.125rem]">
                     <Image src="/images/icon-chrome.png" alt="" width={50} height={50} className="size-full" />
@@ -98,8 +98,13 @@ export default function HeroSection() {
               >
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="w-[14.375rem] h-[5rem] flex items-center justify-center bg-white rounded-[13px] hover:bg-white transition-all duration-300"
+                  className="w-full sm:w-[14.375rem] h-16 sm:h-[5rem] flex items-center justify-center bg-white rounded-[13px] hover:bg-white transition-all duration-300"
+                  onClick={() => {
+                    window.open(
+                      'https://apps.apple.com/sg/app/onewallet-onechain/id6749725541?l=zh-Hans-CN',
+                      '_blank'
+                    );
+                  }}
                 >
                   <div className="w-[3.125rem] h-[3.125rem]">
                     <Image src="/images/icon-phone.png" alt="" width={50} height={50} className="size-full" />

@@ -18,9 +18,8 @@ const asSupported = (l: string): SupportedLocale =>
   (SUPPORTED as readonly string[]).includes(l) ? (l as SupportedLocale) : "en";
 
 export async function generateMetadata({
-                                         params,
-                                       }: {
-  /** ✅ Next 15：params 是 Promise<{ locale: string }> */
+  params,
+}: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
@@ -28,7 +27,7 @@ export async function generateMetadata({
   const isZh = loc === "zh";
 
   return {
-    metadataBase: new URL("https://onewallet.com"),
+    metadataBase: new URL("https://one-wallet.cc"),
     title: {
       default: isZh
         ? "OneWallet - 您的数字金融门户"
@@ -61,7 +60,7 @@ export async function generateMetadata({
     openGraph: {
       type: "website",
       locale: loc === "zh" ? "zh_CN" : "en_US",
-      url: `https://onewallet.com/${loc}`,
+      url: `https://one-wallet.cc/${loc}`,
       siteName: "OneWallet",
       title: isZh
         ? "OneWallet - 您的数字金融门户"
@@ -83,11 +82,11 @@ export async function generateMetadata({
       creator: "@onewallet",
     },
     alternates: {
-      canonical: `https://onewallet.com/${loc}`,
+      canonical: `https://one-wallet.cc/${loc}`,
       languages: {
-        en: "https://onewallet.com/en",
-        zh: "https://onewallet.com/zh",
-        tw: "https://onewallet.com/tw",
+        en: "https://one-wallet.cc/en",
+        zh: "https://one-wallet.cc/zh",
+        tw: "https://one-wallet.cc/tw",
       },
     },
     verification: {
@@ -104,7 +103,6 @@ export default async function RootLayout({
                                            params,
                                          }: {
   children: React.ReactNode;
-  /** ✅ 同样用 Promise<{ locale: string }> */
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
@@ -122,17 +120,17 @@ export default async function RootLayout({
       loc === "zh"
         ? "安全便捷地购买、存储、发送、交换代币和收集NFT的去中心化钱包"
         : "Secure decentralized wallet for buying, storing, sending, swapping tokens and collecting NFTs",
-    url: `https://onewallet.com/${loc}`,
-    creator: { "@type": "Organization", name: "OneWallet Team", url: "https://onewallet.com" },
+    url: `https://one-wallet.cc/${loc}`,
+    creator: { "@type": "Organization", name: "OneWallet Team", url: "https://one-wallet.cc" },
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "30000000" },
   };
 
-  const fontClass =
-    loc === "zh" ? notoSansSC.variable : loc === "tw" ? notoSansTC.variable : dmSans.variable;
+  const mainFont =
+    loc === "zh" ? notoSansSC : loc === "tw" ? notoSansTC : dmSans;
 
   return (
-    <html lang={loc} className={fontClass} suppressHydrationWarning>
+    <html lang={loc} className={`${mainFont.className} ${notoSansSC.variable} ${notoSansTC.variable} ${dmSans.variable}`} suppressHydrationWarning>
     <head>
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <link rel="icon" href="/icon.svg" type="image/svg+xml" />

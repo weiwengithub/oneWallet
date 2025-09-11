@@ -3,112 +3,118 @@
     "language": "语言",
     "theme": "主题",
     "home": "首页",
-    "about": "关于我们",
-    "features": "产品功能",
-    "support": "帮助支持",
-    "contact": "联系我们"
+    "about": "关于",
+    "features": "功能",
+    "support": "支持",
+    "contact": "联系"
   },
   "hero": {
-    "title": "您通往未来金融的门户",
-    "description": "安全便捷地购买、存储、发送、交换代币和收集NFT。受到来自200多个国家和地区的3000多万用户信赖。",
-    "downloadChrome": "Chrome Web Store",
+    "title": "通往未来金融的大门",
+    "description": "轻松安全地购买、存储、发送和兑换代币，并收集 NFT。",
+    "getItOn": "获取",
+    "downloadChrome": "Chrome 网上应用店",
     "downloadApp": "App Store"
   },
   "howItWorks": {
-    "title": "OneWallet 如何工作",
-    "subtitle": "OneWallet 受到全球用户信赖",
+    "title": "OneWallet 如何运作",
+    "subtitle": "OneWallet：无缝的自托管 Web3 访问——在一个地方安全管理资产、与 dApp 互动并赚取奖励。",
+    "works": "运作方式",
     "selfCustody": {
-      "title": "自托管",
-      "description": "这是传统金融的根本性转变。"
+      "title": "自我托管",
+      "description": "你拥有你的密钥，你就拥有你的资产。"
     },
     "permissionless": {
-      "title": "无需许可",
-      "description": "世界上任何人都可以创建钱包并访问去中心化网络和金融服务（DeFi、NFT）。"
+      "title": "无许可访问",
+      "description": "任何人、任何地方都可以创建钱包并访问 DeFi 和 NFT。"
     },
     "interoperable": {
       "title": "互操作性",
-      "description": "您的钱包是去中心化网络的通用护照。"
+      "description": "你通往去中心化网络的通行证。"
     },
     "globalX": {
-      "title": "全球化",
-      "description": "钱包在无边界的金融基础设施（区块链）上运行。"
+      "title": "全球 X",
+      "description": "基于下一代区块链基础设施构建的无国界金融钱包。"
     }
   },
   "features": {
     "multiLayerSecurity": {
       "title": "多层安全保护",
-      "description": "先进的安全措施保护您的资产安全"
+      "description": "企业级防护，保障你的资产安全。"
     },
     "defiSupport": {
       "title": "支持 DeFi、DApp、GameFi 和 NFT",
-      "description": "访问完整的去中心化应用生态系统"
+      "description": "一个钱包满足你所有的 Web3 需求。"
     },
     "oneChainSupport": {
-      "title": "支持 OneChain、SUI 等",
-      "description": "兼容多个区块链网络"
+      "title": "支持 OneChain、SUI 及更多",
+      "description": "无缝连接到增长最快的区块链生态系统。"
     }
   },
   "newsletter": {
     "title": "订阅我们的新闻通讯",
-    "description": "您安全可信的加密钱包，探索区块链世界",
-    "placeholder": "yourwallet@gmail.com",
-    "subscribe": "订阅"
+    "description": "走在区块链世界的前沿，直接在你的邮箱中获取产品更新、见解和 Web3 趋势。",
+    "placeholder": "onewallet@gmail.com",
+    "subscribe": "订阅",
+    "emailError": "请输入有效的邮箱地址",
+    "subscriptionSuccessful": "订阅成功"
   },
   "footer": {
-    "description": "我们坚持开放的技术社区，欢迎所有开发者共同构建更便捷、安全、丰富的区块链世界",
-    "copyright": "OneWallet © 2023. 保留所有权利"
+    "description": "在 OneWallet，我们相信开放技术和赋能开发者。我们共同构建一个更安全、更智能、更富有的区块链世界。",
+    "copyright": "© OneWallet 2025. 版权所有。",
+    "termsOfService": "服务条款",
+    "privacyPolicy": "隐私政策"
   },
   "about": {
     "title": "关于 OneWallet",
     "subtitle": "构建数字金融的未来",
     "mission": {
       "title": "我们的使命",
-      "description": "让去中心化金融民主化，让区块链技术在世界各地为每个人所用。"
+      "description": "普惠去中心化金融的访问权，让区块链技术对所有人、任何地方都触手可及。"
     },
     "vision": {
       "title": "我们的愿景",
-      "description": "一个金融主权是普遍权利的世界，由安全、用户友好的区块链技术提供支持。"
+      "description": "一个人人享有金融主权的世界，由安全、易用的区块链技术驱动。"
     },
     "team": {
       "title": "我们的团队",
-      "description": "一个由区块链专家、安全专家和用户体验设计师组成的多元化团队，致力于去中心化的未来。"
+      "description": "由区块链专家、安全专家和用户体验设计师组成的多元团队，共同致力于去中心化的未来。"
     }
   },
   "contact": {
     "title": "联系我们",
     "subtitle": "与我们的团队取得联系",
-    "email": "电子邮件",
-    "message": "消息",
-    "send": "发送消息",
+    "email": "邮箱",
+    "message": "留言",
+    "send": "发送信息",
     "info": {
-      "title": "联系方式",
-      "description": "对 OneWallet 有疑问？我们随时为您提供帮助。"
+      "title": "取得联系",
+      "description": "对 OneWallet 有疑问？我们随时为你解答。"
     }
   },
   "support": {
-    "title": "帮助中心",
-    "subtitle": "找到您问题的答案",
+    "title": "支持中心",
+    "subtitle": "找到你的问题答案",
     "faq": {
       "title": "常见问题",
       "questions": [
         {
           "question": "如何创建钱包？",
-          "answer": "从 Chrome Web Store 或 App Store 下载 OneWallet，然后按照设置向导安全地创建您的新钱包。"
+          "answer": "从 Chrome 网上应用店或 App Store 下载 OneWallet，然后按照安装向导安全创建新钱包。"
         },
         {
           "question": "OneWallet 安全吗？",
-          "answer": "是的，OneWallet 使用多层安全保护，包括加密、安全密钥存储和高级身份验证来保护您的资产。"
+          "answer": "是的，OneWallet 采用多层安全防护，包括加密、安全密钥存储和高级身份验证来保护你的资产。"
         },
         {
           "question": "支持哪些区块链？",
-          "answer": "OneWallet 支持多个区块链，包括 OneChain、以太坊、SUI 和生态系统中的许多其他区块链。"
+          "answer": "OneWallet 支持包括 OneChain、以太坊、SUI 在内的多个区块链以及更多生态系统。"
         }
       ]
     }
   },
   "common": {
     "loading": "加载中...",
-    "error": "出现了一些问题",
+    "error": "发生错误",
     "notFound": "页面未找到",
     "backHome": "返回首页"
   }

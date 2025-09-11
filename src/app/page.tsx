@@ -7,12 +7,7 @@ export default function RootPage() {
   const router = useRouter();
 
   useEffect(() => {
-    // Get browser language or default to 'en'
-    // const locale = navigator.language.startsWith('zh')
-    //   ? navigator.language.includes('TW') || navigator.language.includes('HK')
-    //     ? 'tw'
-    //     : 'zh'
-    //   : 'en';
+    console.log('************** 11 root page')
     router.replace('/en');
   }, [router]);
 
