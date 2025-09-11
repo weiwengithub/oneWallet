@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { dmSans, notoSansSC, notoSansTC } from "../fonts";
 import "../globals.css";
-import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
@@ -99,59 +98,25 @@ export async function generateMetadata({
 }
 
 export default async function RootLayout({
-                                           children,
-                                           params,
-                                         }: {
+  children,
+  params,
+}: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   const loc = asSupported(locale);
-
   const messages = await getMessages({ locale: loc });
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "OneWallet",
-    applicationCategory: "FinanceApplication",
-    operatingSystem: "Web, iOS, Android",
-    description:
-      loc === "zh"
-        ? "安全便捷地购买、存储、发送、交换代币和收集NFT的去中心化钱包"
-        : "Secure decentralized wallet for buying, storing, sending, swapping tokens and collecting NFTs",
-    url: `https://one-wallet.cc/${loc}`,
-    creator: { "@type": "Organization", name: "OneWallet Team", url: "https://one-wallet.cc" },
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "30000000" },
-  };
-
-  const mainFont =
-    loc === "zh" ? notoSansSC : loc === "tw" ? notoSansTC : dmSans;
+  const mainFont = loc === "zh" ? notoSansSC : loc === "tw" ? notoSansTC : dmSans;
 
   return (
-    <html lang={loc} className={`${mainFont.className} ${notoSansSC.variable} ${notoSansTC.variable} ${dmSans.variable}`} suppressHydrationWarning>
-    <head>
-      <link rel="icon" href="/favicon.ico" sizes="any" />
-      <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-      <link rel="manifest" href="/manifest.json" />
-      <meta name="theme-color" content="#1e40af" />
-      <meta name="color-scheme" content="dark light" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-      <Script
-        id="structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-    </head>
-    <body className="antialiased">
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-      <NextIntlClientProvider locale={loc} messages={messages}>
-        {children}
-      </NextIntlClientProvider>
-    </ThemeProvider>
-    </body>
-    </html>
+    <div lang={loc} className={mainFont.className}>
+      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <NextIntlClientProvider locale={loc} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </ThemeProvider>
+    </div>
   );
 }
