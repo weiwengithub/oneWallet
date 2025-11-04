@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://onewallet.com'
+  const baseUrl = 'https://one-wallet.cc'
   const locales = ['en', 'zh', 'tw']
   const pages = ['', '/about', '/features', '/support', '/contact']
 

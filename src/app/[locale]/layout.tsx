@@ -3,6 +3,7 @@ import { dmSans, notoSansSC, notoSansTC } from "../fonts";
 import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import JsonLd from "@/components/JsonLd";
 
 /** 静态导出需要列举动态段 */
 export function generateStaticParams() {
@@ -70,18 +71,16 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      locale: loc === "zh" ? "zh_CN" : "en_US",
+      locale: loc === "zh" ? "zh_CN" : loc === "tw" ? "zh_TW" : "en_US",
       url: `https://one-wallet.cc/${loc}`,
       siteName: "OneWallet",
       title: defaultTitle,
       description: description,
-      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "OneWallet - Crypto Wallet" }],
     },
     twitter: {
       card: "summary_large_image",
       title: defaultTitle,
       description: description,
-      images: ["/og-image.jpg"],
       creator: "@onewallet",
     },
     alternates: {
@@ -116,6 +115,7 @@ export default async function RootLayout({
 
   return (
     <div lang={loc} className={mainFont.className}>
+      <JsonLd locale={loc} />
       <NextIntlClientProvider locale={loc} messages={messages}>
         {children}
       </NextIntlClientProvider>

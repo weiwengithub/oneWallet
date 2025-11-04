@@ -9,17 +9,22 @@ Disallow: /admin/
 # Allow important pages
 Allow: /en/
 Allow: /zh/
+Allow: /tw/
 Allow: /en/about
 Allow: /zh/about
+Allow: /tw/about
 Allow: /en/features
 Allow: /zh/features
+Allow: /tw/features
 Allow: /en/support
 Allow: /zh/support
+Allow: /tw/support
 Allow: /en/contact
 Allow: /zh/contact
+Allow: /tw/contact
 
 # Sitemap location
-Sitemap: https://onewallet.com/sitemap.xml
+Sitemap: https://one-wallet.cc/sitemap.xml
 
 # Crawl delay (optional)
 Crawl-delay: 1
