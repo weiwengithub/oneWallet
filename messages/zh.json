@@ -56,7 +56,8 @@
     "placeholder": "onewallet@gmail.com",
     "subscribe": "订阅",
     "emailError": "请输入有效的邮箱地址",
-    "subscriptionSuccessful": "订阅成功"
+    "subscriptionSuccessful": "订阅成功",
+    "subscriptionFailed": "订阅失败"
   },
   "footer": {
     "description": "在 OneWallet，我们相信开放技术和赋能开发者。我们共同构建一个更安全、更智能、更富有的区块链世界。",

@@ -79,7 +79,7 @@ export default function Footer() {
               transition={{ duration: 0.3 }}
               onClick={() => {
                 window.open(
-                  'https://onewallet2020.s3.ap-southeast-2.amazonaws.com/aggrement/index.html#/terms',
+                  'https://file.one-wallet.cc/agreement/index.html#/terms',
                   '_blank'
                 );
               }}
@@ -92,7 +92,7 @@ export default function Footer() {
               transition={{ duration: 0.3 }}
               onClick={() => {
                 window.open(
-                  'https://onewallet2020.s3.ap-southeast-2.amazonaws.com/aggrement/index.html#/privacy',
+                  'https://file.one-wallet.cc/agreement/index.html#/privacy',
                   '_blank'
                 );
               }}

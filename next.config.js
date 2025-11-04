@@ -18,6 +18,18 @@ const nextConfig = {
   },
   poweredByHeader: false,
   compress: true,
+  // 开发环境API代理配置
+  async rewrites() {
+    if (process.env.NODE_ENV === 'development') {
+      return [
+        {
+          source: '/api/:path*',
+          destination: 'https://wallet-admin.deltax.online/api/:path*',
+        },
+      ];
+    }
+    return [];
+  },
   images: {
     unoptimized: true,
     formats: ['image/webp', 'image/avif'],

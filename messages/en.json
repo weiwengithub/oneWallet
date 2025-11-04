@@ -56,7 +56,8 @@
     "placeholder": "onewallet@gmail.com",
     "subscribe": "Subscribe",
     "emailError": "Please enter a valid email",
-    "subscriptionSuccessful": "Subscription Successful"
+    "subscriptionSuccessful": "Subscription Successful",
+    "subscriptionFailed": "Subscription Failed"
   },
   "footer": {
     "description": "At OneWallet, we believe in open technology and empowering developers. Together, we’re building a safer, smarter, and richer blockchain world.",

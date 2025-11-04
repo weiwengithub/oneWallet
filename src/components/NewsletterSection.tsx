@@ -9,6 +9,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { toast } from "@/lib/toast";
 import {isEmail} from "@/lib/utils";
+import {apiService} from "@/lib/api";
 
 export default function NewsletterSection() {
   const t = useTranslations('newsletter');
@@ -27,14 +28,30 @@ export default function NewsletterSection() {
       return false;
     }
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setEmail('');
-      toast.info({
-        title: t('subscriptionSuccessful'),
-        position: "top-right",
-      });
-    }, 2000)
+    apiService.addMail({mailAddress: email})
+      .then((res) => {
+        setLoading(false);
+        if (res.code === 200) {
+          setEmail('');
+          toast.info({
+            title: t('subscriptionSuccessful'),
+            position: "top-right",
+          });
+        } else {
+          toast.error({
+            title: res.msg || t('subscriptionFailed'),
+            position: "top-right",
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+        setLoading(false);
+        toast.error({
+          title: t('subscriptionFailed'),
+          position: "top-right",
+        });
+      })
   };
 
   const containerVariants = {

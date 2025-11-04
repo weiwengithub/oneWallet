@@ -1,10 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useTheme } from 'next-themes';
 import Image from 'next/image';
-import { Globe, Moon, Sun, Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import Link from 'next/link';
@@ -18,7 +15,6 @@ import { useRouter, usePathname } from 'next/navigation';
 
 export default function Header() {
   const t = useTranslations('nav');
-  const { theme, setTheme } = useTheme();
   const router = useRouter();
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -64,46 +60,6 @@ export default function Header() {
 
         {/* Controls and Mobile Menu */}
         <div className="flex items-center space-x-[12px]">
-          {/* Theme Toggle */}
-          {showTheme && (
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="h-[2.625rem] w-[2.625rem] flex items-center justify-center text-white border-[1px] border-solid border-[rgba(255,255,255,0.2)] rounded-[40px] hover:bg-transparent hover:text-white cursor-pointer"
-                >
-                  <div className="h-[1rem] w-[1rem]">
-                    <Sun className="size-full rotate-0 scale-100 transition-all" />
-                  </div>
-                </motion.div>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="end"
-                className="bg-white/90 dark:bg-slate-800/90 light:bg-white/95 backdrop-blur-md border-white/20 dark:border-slate-700/50 light:border-slate-200"
-              >
-                <DropdownMenuItem
-                  onClick={() => setTheme('light')}
-                  className="hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer"
-                >
-                  Light
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={() => setTheme('dark')}
-                  className="hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer"
-                >
-                  Dark
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={() => setTheme('system')}
-                  className="hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer"
-                >
-                  System
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          )}
-
           {/* Language Toggle */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

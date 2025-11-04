@@ -3,7 +3,6 @@ import { dmSans, notoSansSC, notoSansTC } from "../fonts";
 import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { ThemeProvider } from "next-themes";
 
 /** 静态导出需要列举动态段 */
 export function generateStaticParams() {
@@ -23,22 +22,35 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const loc = asSupported(locale);
-  const isZh = loc === "zh";
+  let defaultTitle = '';
+  let description = '';
+  let keywords = '';
+  switch (loc) {
+    case "en":
+      defaultTitle = "OneWallet | Secure Web3 Wallet for RWA, Stablecoins & DeFi";
+      description = "OneWallet is your secure gateway to Web3. Store, trade, and grow real assets with MPC security, USDO stablecoin, RWA tokenization, and seamless login.";
+      keywords = "OneWallet Web3 wallet, identity-driven crypto wallet, secure crypto wallet for Web3, cross-border crypto payments app";
+      break;
+    case "zh":
+      defaultTitle = "OneWallet | 面向 RWA、稳定币与 DeFi 的安全 Web3 钱包";
+      description = "OneWallet 是你通往 Web3 的安全入口。借助 MPC 安全防护、USDO 稳定币、RWA 资产代币化与无缝登录，轻松存储、交易并增值真实世界资产。";
+      keywords = "OneWallet Web3 钱包，身份驱动的加密钱包，适用于 Web3 的安全加密钱包，跨境加密支付 App";
+      break;
+    case "tw":
+      defaultTitle = "OneWallet | 面向 RWA、穩定幣與 DeFi 的安全 Web3 錢包";
+      description = "OneWallet 是你通往 Web3 的安全入口。憑藉 MPC 安全防護、USDO 穩定幣、RWA 資產代幣化與無縫登入，輕鬆儲存、交易並增值真實世界資產。";
+      keywords = "OneWallet Web3 錢包，身分驅動的加密錢包，適用於 Web3 的安全加密錢包，跨境加密支付 App";
+      break;
+  }
 
   return {
     metadataBase: new URL("https://one-wallet.cc"),
     title: {
-      default: isZh
-        ? "OneWallet - 您的数字金融门户"
-        : "OneWallet - Your Gateway to Future Finance",
+      default: defaultTitle,
       template: "%s | OneWallet",
     },
-    description: isZh
-      ? "安全便捷地购买、存储、发送、交换代币和收集NFT。受到来自200多个国家和地区的3000多万用户信赖的去中心化钱包。"
-      : "Easy and safe to buy, store, send, swap tokens and collect NFTs. Trusted by 30+ million users from 200+ countries and regions.",
-    keywords: isZh
-      ? "OneWallet, 加密钱包, DeFi钱包, NFT钱包, 区块链钱包, 去中心化钱包, 数字资产管理"
-      : "OneWallet, crypto wallet, DeFi wallet, NFT wallet, blockchain wallet, decentralized wallet, digital asset management",
+    description: description,
+    keywords: keywords,
     authors: [{ name: "OneWallet Team" }],
     creator: "OneWallet",
     publisher: "OneWallet",
@@ -61,22 +73,14 @@ export async function generateMetadata({
       locale: loc === "zh" ? "zh_CN" : "en_US",
       url: `https://one-wallet.cc/${loc}`,
       siteName: "OneWallet",
-      title: isZh
-        ? "OneWallet - 您的数字金融门户"
-        : "OneWallet - Your Gateway to Future Finance",
-      description: isZh
-        ? "安全便捷地购买、存储、发送、交换代币和收集NFT。受到来自200多个国家和地区的3000多万用户信赖。"
-        : "Easy and safe to buy, store, send, swap tokens and collect NFTs. Trusted by 30+ million users from 200+ countries and regions.",
+      title: defaultTitle,
+      description: description,
       images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "OneWallet - Crypto Wallet" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isZh
-        ? "OneWallet - 您的数字金融门户"
-        : "OneWallet - Your Gateway to Future Finance",
-      description: isZh
-        ? "安全便捷的去中心化钱包，支持DeFi和NFT"
-        : "Secure decentralized wallet supporting DeFi and NFTs",
+      title: defaultTitle,
+      description: description,
       images: ["/og-image.jpg"],
       creator: "@onewallet",
     },
@@ -112,11 +116,9 @@ export default async function RootLayout({
 
   return (
     <div lang={loc} className={mainFont.className}>
-      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-        <NextIntlClientProvider locale={loc} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </ThemeProvider>
+      <NextIntlClientProvider locale={loc} messages={messages}>
+        {children}
+      </NextIntlClientProvider>
     </div>
   );
 }

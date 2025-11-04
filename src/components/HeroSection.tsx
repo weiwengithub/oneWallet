@@ -123,7 +123,7 @@ export default function HeroSection() {
             className="relative flex justify-center lg:justify-end order-first lg:order-last"
             variants={itemVariants}
           >
-            <Image src="/images/icon-8.png" alt="" width={667} height={690} className="w-full h-auto" />
+            <Image src="/images/icon-8.png" alt="" width={707} height={732} className="w-full h-auto" />
           </motion.div>
         </div>
       </div>
