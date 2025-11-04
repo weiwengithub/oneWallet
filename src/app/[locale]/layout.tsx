@@ -76,12 +76,21 @@ export async function generateMetadata({
       siteName: "OneWallet",
       title: defaultTitle,
       description: description,
+      images: [
+        {
+          url: "/apple-touch-icon.png",
+          width: 180,
+          height: 180,
+          alt: "OneWallet Logo"
+        }
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: defaultTitle,
       description: description,
       creator: "@onewallet",
+      images: ["/apple-touch-icon.png"],
     },
     alternates: {
       canonical: `https://one-wallet.cc/${loc}`,
