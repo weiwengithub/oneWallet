@@ -3,7 +3,7 @@ export default function JsonLd({ locale }: { locale: string }) {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "OneWallet",
-    "applicationCategory": "FinanceApplication",
+    "applicationCategory": "CryptocurrencyWallet",
     "operatingSystem": ["iOS", "Android", "Web"],
     "offers": {
       "@type": "Offer",
@@ -15,49 +15,35 @@ export default function JsonLd({ locale }: { locale: string }) {
       "ratingValue": "4.8",
       "ratingCount": "1250"
     },
-    "description": locale === 'en'
-      ? "OneWallet is your secure gateway to Web3. Store, trade, and grow real assets with MPC security, USDO stablecoin, RWA tokenization, and seamless login."
+    "headline": locale === 'en'
+      ? "OneWallet – Non-Custodial, Privacy-Preserving Web3 Wallet"
       : locale === 'zh'
-      ? "OneWallet 是你通往 Web3 的安全入口。借助 MPC 安全防护、USDO 稳定币、RWA 资产代币化与无缝登录，轻松存储、交易并增值真实世界资产。"
-      : "OneWallet 是你通往 Web3 的安全入口。憑藉 MPC 安全防護、USDO 穩定幣、RWA 資產代幣化與無縫登入，輕鬆儲存、交易並增值真實世界資產。",
+        ? "OneWallet – 去中心化、隐私保护的 Web3 钱包"
+        : "OneWallet – 去中心化、隱私保護的 Web3 錢包",
+    "description": locale === 'en'
+      ? "OneWallet is a secure, privacy-preserving non-custodial Web3 wallet built on the OneChain Move-based Layer-1 blockchain. It supports DeFi, stablecoins, multi-chain assets, MPC key security, tokenized real-world assets (RWA), and on-device key control."
+      : locale === 'zh'
+      ? "OneWallet 是一个安全、注重隐私保护的去中心化 Web3 钱包，基于 OneChain 的 Move 架构 Layer-1 区块链构建。它支持 DeFi、稳定币、多链资产、MPC 密钥安全、代币化实物资产（RWA）以及本地设备密钥控制。"
+      : "OneWallet 是一個安全、重視隱私保護的去中心化 Web3 錢包，建構於以 Move 為基礎的 OneChain Layer-1 區塊鏈之上。它支援 DeFi、穩定幣、多鏈資產、MPC 金鑰安全、代幣化實體資產（RWA），以及裝置端金鑰控制。",
     "url": `https://one-wallet.cc/${locale}`,
     "screenshot": "https://one-wallet.cc/og-image.jpg",
     "featureList": [
-      "Self-Custodial Wallet",
-      "Multi-Chain Support",
-      "DeFi Integration",
-      "NFT Support",
-      "MPC Security"
+      "Non-custodial, user-controlled keys",
+      "MPC-secured key protection",
+      "Zero-tracking privacy model",
+      "On-device encryption",
+      "Move-based Layer-1 security",
+      "Multi-chain wallet support",
+      "Tokenized asset (RWA) support",
+      "Gas-abstracted onboarding",
+      "Seamless DeFi support"
     ]
   };
 
-  const organizationData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "OneWallet",
-    "url": "https://one-wallet.cc",
-    "logo": "https://one-wallet.cc/images/logo.png",
-    "sameAs": [
-      "https://twitter.com/onewallet",
-      "https://github.com/weiwengithub/oneWallet"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Customer Support",
-      "url": `https://one-wallet.cc/${locale}/support`
-    }
-  };
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
-      />
-    </>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
   );
 }
