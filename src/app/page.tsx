@@ -1,17 +1,7 @@
-'use client';
-
-import { useEffect } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
 export default function RootPage() {
-  const router = useRouter();
-  const pathname = usePathname();
-
-  useEffect(() => {
-    if (pathname === '/') {
-      router.replace('/en');
-    }
-  }, [router]);
+  redirect('/en');
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black text-white">

@@ -116,7 +116,7 @@ export default function NewsletterSection() {
                 placeholder={t('placeholder')}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 h-full text-sm sm:text-[20px] text-[#0047C4] bg-transparent border-none outline-none px-[0.75rem] placeholder:text-[rgba(44,48,57,0.4)] focus:border-none focus:outline-none focus-visible:border-none focus-visible:outline-none transition-all duration-300"
+                className="flex-1 h-full text-sm sm:text-[20px] text-[#0047C4] bg-transparent border-none outline-none px-[0.75rem] placeholder:text-[rgba(44,48,57,0.4)] focus:border-none focus:outline-none focus-visible:border-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent transition-all duration-300"
                 required
               />
             </motion.div>
@@ -128,7 +128,7 @@ export default function NewsletterSection() {
             >
               <Button
                 type="submit"
-                className="bg-transparent hover:bg-[#0047C4] h-8 sm:h-[2.75rem] border-2 sm:border-[3px] border-[#0047C4] rounded-md sm:rounded-[0.5rem] text-xs sm:text-[0.875rem] text-[#0047C4] hover:text-white font-medium transition-all duration-300 px-3 sm:px-4"
+                className="bg-transparent hover:bg-[#0047C4] h-8 sm:h-[2.75rem] border-2 sm:border-[3px] border-[#0047C4] rounded-md sm:rounded-[0.5rem] text-xs sm:text-[0.875rem] text-[#0047C4] hover:text-white font-medium outline-none focus:outline-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent transition-all duration-300 px-3 sm:px-4"
                 loading={loading}
                 onClick={handleSubmit}
               >

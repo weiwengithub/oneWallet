@@ -53,7 +53,7 @@ export default function Header() {
         >
           <Link href={`/${currentLocale}`} className="flex items-center space-x-2">
             <div className="w-[21.125rem] h-[5.25rem]">
-              <Image src="/images/logo.png" alt="" width={338} height={84} className="size-full" />
+              <Image src="/images/logo.png" alt="" width={338} height={84} className="size-full outline-none focus:outline-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent" />
             </div>
           </Link>
         </motion.div>
@@ -66,7 +66,7 @@ export default function Header() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="h-[2.625rem] flex items-center text-white border-[1px] border-solid border-[rgba(255,255,255,0.2)] rounded-[40px] px-[1rem] hover:bg-transparent hover:text-white cursor-pointer"
+                className="h-[2.625rem] flex items-center text-white border-[1px] border-solid border-[rgba(255,255,255,0.2)] rounded-[40px] px-[1rem] hover:bg-transparent hover:text-white outline-none focus:outline-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent cursor-pointer"
               >
                 <div className="h-[1rem] w-[1rem] mr-[1rem]">
                   <Image src="/images/icon-language.png" alt="" width={16} height={16} className="size-full" />

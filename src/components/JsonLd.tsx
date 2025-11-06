@@ -26,7 +26,7 @@ export default function JsonLd({ locale }: { locale: string }) {
       ? "OneWallet 是一个安全、注重隐私保护的去中心化 Web3 钱包，基于 OneChain 的 Move 架构 Layer-1 区块链构建。它支持 DeFi、稳定币、多链资产、MPC 密钥安全、代币化实物资产（RWA）以及本地设备密钥控制。"
       : "OneWallet 是一個安全、重視隱私保護的去中心化 Web3 錢包，建構於以 Move 為基礎的 OneChain Layer-1 區塊鏈之上。它支援 DeFi、穩定幣、多鏈資產、MPC 金鑰安全、代幣化實體資產（RWA），以及裝置端金鑰控制。",
     "url": `https://one-wallet.cc/${locale}`,
-    "screenshot": "https://one-wallet.cc/og-image.jpg",
+    "screenshot": "https://one-wallet.cc/apple-touch-icon.png",
     "featureList": [
       "Non-custodial, user-controlled keys",
       "MPC-secured key protection",

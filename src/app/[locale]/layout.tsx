@@ -78,7 +78,7 @@ export async function generateMetadata({
       description: description,
       images: [
         {
-          url: "/apple-touch-icon.png",
+          url: "https://one-wallet.cc/apple-touch-icon.png",
           width: 180,
           height: 180,
           alt: "OneWallet Logo"
@@ -90,7 +90,7 @@ export async function generateMetadata({
       title: defaultTitle,
       description: description,
       creator: "@onewallet",
-      images: ["/apple-touch-icon.png"],
+      images: ["https://one-wallet.cc/apple-touch-icon.png"],
     },
     alternates: {
       canonical: `https://one-wallet.cc/${loc}`,
@@ -101,9 +101,7 @@ export async function generateMetadata({
       },
     },
     verification: {
-      google: "your-google-verification-code",
-      yandex: "your-yandex-verification-code",
-      yahoo: "your-yahoo-verification-code",
+      google: "JjFrWGZV7OlvFHLBs6JAp4-5uzKjdb92-67zN83ER9U",
     },
     category: "technology",
   };
