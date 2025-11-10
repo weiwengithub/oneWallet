@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import SupportPageClient from './SupportPageClient';
+import PrivacyPageClient from './PrivacyPageClient';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -8,7 +8,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'support' });
+  const t = await getTranslations({ locale, namespace: 'privacy' });
 
   const title = t('title');
   const description = t('subtitle');
@@ -30,6 +30,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function SupportPage() {
-  return <SupportPageClient />;
+export default function PrivacyPage() {
+  return <PrivacyPageClient />;
 }

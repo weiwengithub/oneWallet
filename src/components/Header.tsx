@@ -13,13 +13,15 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useRouter, usePathname } from 'next/navigation';
 
-export default function Header() {
+export default function Header({isFixed = false}: {isFixed?: boolean}) {
   const t = useTranslations('nav');
   const router = useRouter();
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const currentLocale = pathname.split('/')[1] || 'en';
   const handleLanguageChange = (locale: string) => {
+    if(currentLocale === locale) return;
     const currentPath = pathname.split('/').slice(2).join('/');
     router.push(`/${locale}/${currentPath}`);
   };
@@ -32,13 +34,11 @@ export default function Header() {
     { name: t('contact'), href: '/contact' },
   ];
 
-  const currentLocale = pathname.split('/')[1] || 'en';
-
   const [showTheme] = useState(false);
 
   return (
     <motion.header
-      className="relative z-50 px-4 py-6 sm:px-[5rem] sm:pt-[1.5rem] sm:pb-[5.875rem]"
+      className={isFixed ? 'w-full h-full' : 'relative z-50 px-4 py-6 sm:px-[5rem] sm:pt-[1.5rem] sm:pb-[5.875rem]'}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -71,7 +71,7 @@ export default function Header() {
                 <div className="h-[1rem] w-[1rem] mr-[1rem]">
                   <Image src="/images/icon-language.png" alt="" width={16} height={16} className="size-full" />
                 </div>
-                <div className="h-[1.5rem] text-[1rem] leading-[1.5rem]">{t('language')}</div>
+                <div className="h-[1.5rem] text-[1rem] leading-[1.5rem] whitespace-nowrap">{t('language')}</div>
                 <div className="h-[0.25rem] w-[0.5rem] ml-[1rem]">
                   <Image src="/images/icon-arrow.png" alt="" width={8} height={4} className="size-full" />
                 </div>
@@ -83,19 +83,19 @@ export default function Header() {
             >
               <DropdownMenuItem
                 onClick={() => handleLanguageChange('en')}
-                className="hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer"
+                className={`${currentLocale === 'en' ? 'text-[#0047C4]' : ''} hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer`}
               >
                 English
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() => handleLanguageChange('zh')}
-                className="hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer"
+                className={`${currentLocale === 'zh' ? 'text-[#0047C4]' : ''} hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer`}
               >
                 简体中文
               </DropdownMenuItem>
               <DropdownMenuItem
                 onClick={() => handleLanguageChange('tw')}
-                className="hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer"
+                className={`${currentLocale === 'tw' ? 'text-[#0047C4]' : ''} hover:bg-[#0047C4] hover:text-white focus:bg-[#0047C4] focus:text-white cursor-pointer`}
               >
                 繁體中文
               </DropdownMenuItem>

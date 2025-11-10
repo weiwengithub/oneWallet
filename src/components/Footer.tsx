@@ -4,9 +4,13 @@ import { useTranslations } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from "next/image";
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 export default function Footer() {
   const t = useTranslations('footer');
+  const params = useParams();
+  const locale = params.locale as string;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -73,32 +77,30 @@ export default function Footer() {
             className="pt-4 sm:pt-[1.75rem]"
             variants={itemVariants}
           >
-            <motion.span
-              className="inline-block text-sm sm:text-[1.125rem] font-medium text-[#A0A1A1] hover:text-[#0047C4] leading-relaxed sm:leading-[1.75rem] cursor-pointer transition-colors duration-300"
+            <motion.div
+              className="inline-block"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              onClick={() => {
-                window.open(
-                  'https://file.one-wallet.cc/agreement/index.html#/terms',
-                  '_blank'
-                );
-              }}
             >
-              {t('termsOfService')}
-            </motion.span>
-            <motion.span
-              className="ml-[36px] inline-block text-sm sm:text-[1.125rem] font-medium text-[#A0A1A1] hover:text-[#0047C4] leading-relaxed sm:leading-[1.75rem] cursor-pointer transition-colors duration-300"
+              <Link
+                href={`/${locale}/terms`}
+                className="text-sm sm:text-[1.125rem] font-medium text-[#A0A1A1] hover:text-[#0047C4] leading-relaxed sm:leading-[1.75rem] transition-colors duration-300"
+              >
+                {t('termsOfService')}
+              </Link>
+            </motion.div>
+            <motion.div
+              className="ml-[36px] inline-block"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              onClick={() => {
-                window.open(
-                  'https://file.one-wallet.cc/agreement/index.html#/privacy',
-                  '_blank'
-                );
-              }}
             >
-              {t('privacyPolicy')}
-            </motion.span>
+              <Link
+                href={`/${locale}/privacy`}
+                className="text-sm sm:text-[1.125rem] font-medium text-[#A0A1A1] hover:text-[#0047C4] leading-relaxed sm:leading-[1.75rem] transition-colors duration-300"
+              >
+                {t('privacyPolicy')}
+              </Link>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

@@ -1,0 +1,38 @@
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull latest code
+        uses: actions/checkout@v4
+      - name: Build docker image
+        run: |      # run：该步骤要执行的命令，| 代表可以有多条命令
+          docker build -t one-wallet-home-page:latest .
+          docker save -o one-wallet-home-page.tar one-wallet-home-page:latest
+
+      - name: Debug IP
+        run: echo "Connecting to ${{ vars.REMOTE_SERVER01_IP }}"
+
+      - name: 删除老的docker压缩包
+        run: sshpass -p ${{secrets.REMOTE_SERVER01_PWD}} ssh -o StrictHostKeyChecking=no ec2-user@${{vars.REMOTE_SERVER01_IP}} "cd ${{vars.REMOTE_PROJECT_TMP_DIR}} && rm -f one-wallet-home-page.tar"
+
+      - name: 上传新的镜像压缩包
+        run: sshpass -p ${{secrets.REMOTE_SERVER01_PWD}} scp -r -o StrictHostKeyChecking=no ./one-wallet-home-page.tar ec2-user@${{vars.REMOTE_SERVER01_IP}}:${{vars.REMOTE_PROJECT_TMP_DIR}}
+
+      - name: 删除老的docker容器
+        run: sshpass -p ${{secrets.REMOTE_SERVER01_PWD}} ssh -o StrictHostKeyChecking=no ec2-user@${{vars.REMOTE_SERVER01_IP}} "docker stop one-wallet-home-page-server || true && docker rm one-wallet-home-page-server || true && docker rmi one-wallet-home-page:latest || true"
+
+      - name: 加载镜像压缩包
+        run: sshpass -p ${{secrets.REMOTE_SERVER01_PWD}} ssh -o StrictHostKeyChecking=no ec2-user@${{vars.REMOTE_SERVER01_IP}} "docker load -i ${{vars.REMOTE_PROJECT_TMP_DIR}}/one-wallet-home-page.tar"
+
+      - name: docker run 运行，启动容器
+        run: sshpass -p ${{secrets.REMOTE_SERVER01_PWD}} ssh -o StrictHostKeyChecking=no ec2-user@${{vars.REMOTE_SERVER01_IP}} "docker run -d --network=host -v /home/ec2-user/docker/logs:/app/logs  --name one-wallet-home-page-server one-wallet-home-page:latest"

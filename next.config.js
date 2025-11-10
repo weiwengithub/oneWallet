@@ -5,10 +5,10 @@ const BASE = isProd ? '' : '';  // 例如 '/onewallet-website'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  output: 'standalone',
   trailingSlash: true,
   basePath: BASE,
-  assetPrefix: BASE + '/',
+  assetPrefix: BASE ? BASE + '/' : undefined,
   allowedDevOrigins: ["*.preview.same-app.com"],
   experimental: {
     optimizePackageImports: ['framer-motion', 'lucide-react'],

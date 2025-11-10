@@ -35,9 +35,6 @@
 .DS_Store
 *.pem
 
-# env files (can opt-in for committing if needed)
-.env*
-
 # vercel
 .vercel
 
@@ -53,3 +50,14 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+
+# Docker
+nginx/logs/
+nginx/ssl/*.pem
+nginx/ssl/*.key
+.env.production
+.env.local
+
+# 备份文件
+*.backup
+*.bak
